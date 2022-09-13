@@ -1,5 +1,4 @@
 import axios from 'axios'
-import moment from 'moment';
 import Swal from 'sweetalert2'
 const urlApi = process.env.REACT_APP_URL_API
 

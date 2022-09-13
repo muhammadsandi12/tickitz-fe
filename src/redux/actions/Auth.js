@@ -29,7 +29,7 @@ export const AuthLogin = (formData) => {
         dispatch(LoginRequest())
         axios({
             method: "POST",
-            url: `${urlApi}/auth/login`,
+            url: `${urlApi}auth/login`,
             data: {
                 email: formData.email,
                 password: formData.password

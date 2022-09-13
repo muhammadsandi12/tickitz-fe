@@ -11,7 +11,7 @@ const AdminMovies = () => {
     const movies = useSelector((state) => state.getMovies)
     let { data } = useSelector((state) => state.login);
     const deleted = useSelector((state) => state.deleteMovies)
-    const [month, setMonth] = useState({})
+    const [month] = useState({})
     const isAddMovies = useSelector((state) => state.addMovies)
     
     useEffect(() => {

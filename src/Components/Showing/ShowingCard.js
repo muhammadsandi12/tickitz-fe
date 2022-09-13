@@ -6,11 +6,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import moment from "moment"
 
 const Showing = () => {
-    const navigate = useNavigate();
     const now = moment().format('YYYY-MM-DD')
-    const { data, error, loading } = useSelector((state) => state.getNowShowing);
+    const { data} = useSelector((state) => state.getNowShowing);
     const dispatch = useDispatch()
-    const [nowShowing, setNowShowing] = useState({
+    const urlImage = process.env.REACT_APP_URL_IMAGE
+    const [nowShowing, setNowShowing] = useState({    
         search: '',
         sort: '',
         month: now,
@@ -40,7 +40,7 @@ const Showing = () => {
                         return (
                             <Link to={`/details/${movie.id_movies}`}>
                                 <div className="w-[223px] h-[308px] flex justify-center items-center  border-white border-2 rounded-xl mr-10 mt-4">
-                                    <img src={`http://localhost:3289/uploads/${movie.cover}`} className="rounded-md" alt={movie.title} width={159} height={244} />
+                                    <img src={`${urlImage}/${movie.cover}`} className="rounded-md" alt={movie.title} width={159} height={244} />
                                 </div>
                             </Link>
                         )

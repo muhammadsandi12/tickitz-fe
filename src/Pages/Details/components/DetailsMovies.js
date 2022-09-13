@@ -5,10 +5,9 @@ import { useParams } from "react-router-dom"
 import './details.css'
 import moment from "moment"
 const DetailsMovies = () => {
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     const dispatch = useDispatch()
-    const details = useSelector((state) => state.getMoviesById)
-    const [detailsMovies, setDetailsMovies] = useState({})
-    
+    const details = useSelector((state) => state.getMoviesById)    
     let { id } = useParams()
 
     useEffect(() => {
@@ -22,7 +21,7 @@ const DetailsMovies = () => {
                 <section className="container mx-auto flex ">
                     <div className="w-4/12 mr-10">
                         <div className="p-8 border-[0.5px] border-[#DEDEDE] rounded-lg">
-                            <img className="w-[236px] h-[362px]" src={`http://localhost:3289/uploads/${item.cover}`} />
+                            <img className="w-[236px] h-[362px]" src={`${urlImage}${item.cover}`} />
                         </div>
                     </div>
                     <div className="w-8/12">

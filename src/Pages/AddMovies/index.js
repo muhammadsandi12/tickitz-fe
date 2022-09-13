@@ -9,7 +9,6 @@ import AdminMovies from '../../Components/AdminMovies'
 const AddMovies = () => {
     const login = useSelector((state) => state.login)
     const isAddMovies = useSelector((state) => state.addMovies)
-    const movies = useSelector((state) => state.getMovies)
     const [formAddData, setFormAddData] = useState({})
     const [repatch, setRepatch] = useState(false)
     const dispatch = useDispatch()
@@ -23,10 +22,6 @@ const AddMovies = () => {
     formData.append('director', formAddData.director)
     formData.append('description', formAddData.description)
     formData.append('casts', formAddData.casts)
-
-
-    console.log(isAddMovies, 'ini is add movies')
-    console.log(login.data.token, 'ini token')
 
     useEffect(() => {
 

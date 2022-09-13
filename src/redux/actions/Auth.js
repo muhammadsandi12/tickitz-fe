@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Swal from 'sweetalert2'
-
+const urlApi = process.env.REACT_APP_URL_API
 
 const LoginRequest = () => {
     return {
@@ -29,7 +29,7 @@ export const AuthLogin = (formData) => {
         dispatch(LoginRequest())
         axios({
             method: "POST",
-            url: "http://localhost:3289/api/v1/auth/login",
+            url: `${urlApi}/auth/login`,
             data: {
                 email: formData.email,
                 password: formData.password
@@ -95,7 +95,7 @@ export const AuthRegister = (formData) => {
         dispatch(RegisterRequest())
         axios({
             method: "POST",
-            url: "http://localhost:3289/api/v1/auth/register",
+            url: `${urlApi}/auth/register`,
             data: {
                 firstname: formData.firstname,
                 lastname: formData.lastname,

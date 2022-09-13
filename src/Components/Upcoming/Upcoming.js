@@ -6,9 +6,11 @@ import { useParams } from "react-router-dom"
 import moment from "moment"
 
 const Upcoming = () => {
+    
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     const dispatch = useDispatch()
     const now = moment().format('YYYY-MM-DD')
-    const { data, error, loading } = useSelector((state) => state.getUpcoming);
+    const { data,} = useSelector((state) => state.getUpcoming);
     const [upcoming, setUpcoming] = useState({
         search: '',
         sort: '',
@@ -37,8 +39,8 @@ const Upcoming = () => {
                         return (
                             <div className="justify-between">
                                 <div className="w-[223px] bg-white h-[452px] flex flex-col justify-center items-center  border-[#DEDEDE] border-2 rounded-xl mr-10 mt-4">
-                                    <img src={`http://localhost:3289/uploads/${movie.cover}`} className="rounded-md w-[159px] h-[244px]" alt={movie.title}  />
-                                
+                                    <img src={`${urlImage}${movie.cover}`} className="rounded-md w-[159px] h-[244px]" alt={movie.title}  />
+
                                 <div className="text-center mt-4" >
                                             <div className="text-lg font-bold text-[#14142B]">
                                                 <h3>{movie.title}</h3>

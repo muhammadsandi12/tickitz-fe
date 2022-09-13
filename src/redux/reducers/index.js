@@ -11,7 +11,8 @@ import GetUpcoming from "./GetUpcoming";
 import GetNowShowing from "./GetNowShowing";
 import UpdateUser from "./UpdateUser";
 import DeleteMovies from "./DeleteMovies";
-
+import Getseat from "./GetSeat"
+import GetBookNow from "./GetBookNow"
 
 const rootReducers = combineReducers({
     login: Login,
@@ -25,7 +26,9 @@ const rootReducers = combineReducers({
     getUpcoming: GetUpcoming,
     getNowShowing: GetNowShowing,
     updateUser: UpdateUser,
-    deleteMovies: DeleteMovies
+    deleteMovies: DeleteMovies,
+    getSeat: Getseat,
+    getBookNow: GetBookNow
 })
 
 export default rootReducers

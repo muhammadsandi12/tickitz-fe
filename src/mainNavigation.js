@@ -15,7 +15,9 @@ const MainNavigations = () => {
         <Route path=':id' element={<Details/>}/>
        </Route>
        <Route path='/profile' element={<Profile/>}/>
-      <Route path='/booking' element={<Booking/>}/> 
+      <Route path='/booking'>
+        <Route path=':id' element={<Booking/>}/>
+       </Route>
 
     </Routes>
   )

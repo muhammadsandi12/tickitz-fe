@@ -1,6 +1,5 @@
 import moment from "moment"
 import { Link, useSearchParams } from "react-router-dom"
-import { months } from "moment"
 import './movies.css'
 import { useSelector, useDispatch } from "react-redux"
 import { GetMovies } from "../../redux/actions/Movies"
@@ -9,12 +8,11 @@ import { useEffect, useState } from "react"
 
 const AllMovies = () => {
     const [query, setQuery] = useSearchParams()
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     const [paginate, setPaginate] = useState({ page: query.get('page') ?? 1 })
     const dispatch = useDispatch()
     const movies = useSelector((state) => state.getMovies)
     const [month, setMonth] = useState({})
-    console.log(paginate.page, 'ini page')
-    console.log(query.get('page'), 'query page')
     useEffect(() => {
         dispatch(GetMovies(month, paginate))
     }, [paginate, month])
@@ -55,8 +53,8 @@ const AllMovies = () => {
                     {movies?.data?.results?.map((item) => (
                         <>
                             <div className="flex flex-col mx-4 my-2 border-[0.5px] border-[#DEDEDE] rounded-r-lg px-6 py-4 justify-between ">
-                                <div className=" ">
-                                    <img className="w-[159px] h-[244px] rounded-lg" src={`http://localhost:3289/uploads/${item.cover}`} alt={item.title} />
+                                <div className="">
+                                    <img className="w-[159px] h-[244px] rounded-lg" src={`${urlImage}/${item.cover}`} alt={item.title} />
                                 </div>
                                 <div className="text-center mt-4" >
                                     <div className="text-lg font-bold text-[#14142B]">
@@ -80,7 +78,6 @@ const AllMovies = () => {
                     {totalPage?.map((item, index) => {
                         return (
                             <>
-
                                 <button className={`btn-pagination ${paginate.page === index + 1 ? `btn-active` : 'btn-noActive'}`} onClick={(e) => handlePaginate(index + 1)} >{index + 1}</button>
                             </>
                         )

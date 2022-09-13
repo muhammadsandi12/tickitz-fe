@@ -1,16 +1,17 @@
 import { React, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate, } from 'react-router-dom'
-import { AuthLogin, AuthLogOut } from '../../redux/actions/Auth'
+import {  AuthLogOut } from '../../redux/actions/Auth'
 import { GetUsersById } from '../../redux/actions/Users'
 import { useSelector, useDispatch } from 'react-redux'
 import logo from './Tickitz1.png'
 
 const Navbar = () => {
     const navigate = useNavigate()
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     const dispatch = useDispatch()
     const [active, setActive] = useState(false)
-    let { data, error, loading, isLogin } = useSelector((state) => state.login);
+    let { data, isLogin } = useSelector((state) => state.login);
     const users = useSelector((state) => state.getUsersById)
     const navigation = (e) => {
         setActive(!active)
@@ -79,7 +80,7 @@ const Navbar = () => {
                                 <input type={"text"} className="outline-none border-gray-100 border-w border-[0.5px] py-1 px-4 rounded-xl " placeholder="type to search..." />
                             </div>
                             <div className='' onClick={navigation}>
-                                <img className=' rounded-full w-[50px] h-[50px]' src={`http://localhost:3289/uploads/${users.data.profile_image}`} />
+                                <img className=' rounded-full w-[50px] h-[50px]' src={`${urlImage}${users.data.profile_image}`} />
                                 <div className='relative bg-slate-600'>
                                     <div className={active ? 'w-[120px] bg-white flex flex-col absolute top-1 rounded-md mt-2 border-[0.2px] px-4 py-1 justify-start items-start' : 'hidden'}>
 

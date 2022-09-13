@@ -1,17 +1,22 @@
 import './schedule.css'
 import { useDispatch, useSelector } from 'react-redux/'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { GetScheduleByMoviesById } from '../../../redux/actions/Schedule'
-import { useParams } from "react-router-dom"
-
+import { Link, useParams } from "react-router-dom"
+import { GetBookNow } from '../../../redux/actions/BookNow'
 const ScheduleMovie = () => {
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     const { id } = useParams()
     const dispatch = useDispatch()
-    const { data, error, loading } = useSelector((state) => state.getScheduleByMoviesById);
-    console.log(data, 'ini data schedule')
+    const { data} = useSelector((state) => state.getScheduleByMoviesById);
+    const [time, setTime] = useState()
+
     useEffect(() => {
         dispatch(GetScheduleByMoviesById(id))
     }, [])
+    const handleBooking =(item, time) =>{
+        dispatch(GetBookNow({item,time}))
+    }
     return (
         <div className="container container-showtimes">
            
@@ -45,7 +50,7 @@ const ScheduleMovie = () => {
                             <div className='premiere-details'>
                                 <div className='logo-premiere' >
                                     <div className='wrap-image'>
-                                        <img src={`http://localhost:3289/uploads/${item.logo_premiere}`} />
+                                        <img src={`${urlImage}${item.logo_premiere}`} />
                                     </div>
                                 </div>
                                 <div className='details-premiere'>
@@ -59,10 +64,8 @@ const ScheduleMovie = () => {
                                 <div className='time-details'>
                                     {item?.time?.map((time) => (
                                         <>
-
-                                            <div className='time'>
+                                            <div onClick={() =>setTime(time.id)} className='time'>
                                                 {time.time}
-
                                             </div>
                                         </>
                                     ))}
@@ -75,7 +78,9 @@ const ScheduleMovie = () => {
                                 </div>
                             </div>
                                 <div className='wrap-btn-book'>
-                                    <button className='btn-book'>Book now</button>
+                                <Link to={`/booking/:${id}`}>
+                                    <button onClick={(e)=>handleBooking(item, time)} className='btn-book'>Book now</button>
+                                </Link>
                                 </div>
 
                         </div>

@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { AuthRegister } from '../../redux/actions/Auth'
 import './register.css'
-import Swal from 'sweetalert2'
  
 
 
 
 const SignUp = ()=> {
-  const {data, error, loading, isRegister} = useSelector((state) =>state.register)
+  const { loading, isRegister} = useSelector((state) =>state.register)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [formAddUsers, setFormAddUsers] = useState({

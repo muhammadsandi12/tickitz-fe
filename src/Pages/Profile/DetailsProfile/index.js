@@ -11,10 +11,8 @@ const DetailsProfile = () => {
     let { data, error, loading, isLogin } = useSelector((state) => state.login);
     const update = useSelector((state) => state.updateUser);
     const [selectedImage, setSelectedImage] = useState();
-    console.log(users.data, 'ini users data')
     const [repatch, setRepatch] = useState(false)
     const [formUpdate, setFormUpdate] = useState({})
-    console.log(formUpdate, 'ini form update')
     const token = data.token
     
     const formData = new FormData()
@@ -28,9 +26,7 @@ const DetailsProfile = () => {
         dispatch(UpdateUser(formData, token))
         setRepatch(!repatch)
     }
-    const removeSelectedImage = () => {
-        setSelectedImage();
-    };
+
     useEffect(() => {
         dispatch(GetUsersById(token))
     }, [update])
@@ -43,8 +39,8 @@ const DetailsProfile = () => {
     return (
         <div className="bg-gray">
             <div className="container mx-auto   ">
-                <div className="bg-red-200 flex">
-                    <div className="w-/12 h-3/6  bg-white" >
+                <div className=" flex">
+                    <div className="w-4/12 h-3/6 mr-6 rounded lg bg-white" >
                         <div className="wrap-details-name">
                             <div className="title-info">
                                 INFO
@@ -71,14 +67,14 @@ const DetailsProfile = () => {
                         </div>
                     </div>
                     <div className="w-8/12">
-                        <div className="list-account">
-                            <ul>
-                                <li>
+                        <div className="bg-white py-8 px-8 rounded-xl mb-10">
+                            <ul className="flex">
+                                <li className="w-6/12">
                                     <Link to={"/profile"}>
                                         Account Setting
                                     </Link>
                                 </li>
-                                <li>
+                                <li className="w-6/12">
                                     <Link to={""}>
                                         Order History
                                     </Link>
@@ -86,15 +82,15 @@ const DetailsProfile = () => {
                             </ul>
                         </div>
                         <form encType='multipart/form-data' >
-                            <div className="details-information">
-                                <div className="wrap-title">
-                                    <p className="title-details"> Details Information</p>
+                            <div className="flex flex-col mt-4 py-14 px-8 mb-4 rounded-xl bg-white">
+                                <div className="wrap-title border-b-[0.5px] pb-4 border-[#DEDEDE]">
+                                    <p className="text-[#14142B] text-base font-medium "> Details Information</p>
                                 </div>
-                                <div className="input-details">
-                                    <div className="section-input ">
-                                        <div className="wrap-input input-left">
-                                            <label>firstname</label>
-                                            <input type={"text"} defaultValue={users.data.firstname} onChange={(e) => {
+                                <div className="bg-white">
+                                    <div className="flex text-[#4E4B66] text-base font-normal  ">
+                                        <div className="wrap-input input-left ">
+                                            <label className="mb-4">firstname</label>
+                                            <input className="outline-none py-4 px-2 border-[0.5px] border-[#DEDEDE] rounded-lg " type={"text"} defaultValue={users.data.firstname} onChange={(e) => {
                                                 setFormUpdate((prevData) => ({
                                                     ...prevData,
                                                     firstname: e.target.value
@@ -102,8 +98,8 @@ const DetailsProfile = () => {
                                             }} />
                                         </div>
                                         <div className="wrap-input input-right">
-                                            <label>lastname</label>
-                                            <input defaultValue={users.data.lastname} onChange={(e) => {
+                                            <label className="mb-4">lastname</label>
+                                            <input className="outline-none py-4 px-2 border-[0.5px] border-[#DEDEDE] rounded-lg "  defaultValue={users.data.lastname} onChange={(e) => {
                                                 setFormUpdate((prevData) => ({
                                                     ...prevData,
                                                     lastname: e.target.value
@@ -111,14 +107,14 @@ const DetailsProfile = () => {
                                             }} />
                                         </div>
                                     </div>
-                                    <div className="section-input ">
+                                    <div className="section-input text-[#4E4B66] text-base font-normal">
                                         <div className="wrap-input input-left">
-                                            <label>email</label>
-                                            <input defaultValue={users.data.email} disabled={true} />
+                                            <label className="mb-4">email</label>
+                                            <input className="outline-none py-4 px-2 border-[0.5px] border-[#DEDEDE] rounded-lg " defaultValue={users.data.email} disabled={true} />
                                         </div>
                                         <div className="wrap-input input-right">
-                                            <label>Phone Number</label>
-                                            <input defaultValue={users.data.phone_number} onChange={(e) => {
+                                            <label className="mb-4">Phone Number</label>
+                                            <input className="outline-none py-4 px-2 border-[0.5px] border-[#DEDEDE] rounded-lg " defaultValue={users.data.phone_number} onChange={(e) => {
                                                 setFormUpdate((prevData) => ({
                                                     ...prevData,
                                                     phone_number: e.target.value
@@ -133,30 +129,38 @@ const DetailsProfile = () => {
                                 <button onClick={handleUpdate} className="btn-update">Update Changes</button>
                             </div>
                         </form>
-                        <form encType='multipart/form-data'>
-                            <div className="section-password">
-                                <div className="wrap-title">
-                                    <p className="title-details"> Account and Privacy</p>
+                        <form encType='multipart/form-data' >
+                            <div className="flex flex-col mt-4 py-14 px-8 mb-4 rounded-xl bg-white">
+                                <div className="wrap-title border-b-[0.5px] pb-4 border-[#DEDEDE]">
+                                    <p className="text-[#14142B] text-base font-medium "> Account and Privacy</p>
                                 </div>
-                                <div className="input-details">
-
-                                    <div className="section-input ">
-                                        <div className="wrap-input input-left">
-                                            <label>New Password</label>
-                                            <input type={"password"} />
-
+                                <div className="bg-white">
+                                    <div className="flex text-[#4E4B66] text-base font-normal  ">
+                                        <div className="wrap-input input-left ">
+                                            <label className="mb-4">New Password</label>
+                                            <input className="outline-none py-4 px-2 border-[0.5px] border-[#DEDEDE] rounded-lg "type={"password"}  onChange={(e) => {
+                                                setFormUpdate((prevData) => ({
+                                                    ...prevData,
+                                                    firstname: e.target.value
+                                                }))
+                                            }} />
                                         </div>
                                         <div className="wrap-input input-right">
-                                            <label>Confirm Password</label>
-                                            <input type={"password"} />
+                                            <label className="mb-4">Confirm Password</label>
+                                            <input type={"password"} className="outline-none py-4 px-2 border-[0.5px] border-[#DEDEDE] rounded-lg" onChange={(e) => {
+                                                setFormUpdate((prevData) => ({
+                                                    ...prevData,
+                                                    lastname: e.target.value
+                                                }))
+                                            }} />
                                         </div>
                                     </div>
-
+                                   
                                 </div>
                             </div>
 
                             <div>
-                                <button className="btn-update">Update Changes</button>
+                                <button onClick={handleUpdate} className="btn-update">Update Changes</button>
                             </div>
                         </form>
                     </div>

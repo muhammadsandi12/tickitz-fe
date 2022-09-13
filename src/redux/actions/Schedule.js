@@ -1,4 +1,5 @@
 import axios from "axios";
+const urlApi = process.env.REACT_APP_URL_API
 
 const GetScheduleByMoviesRequest =() =>{
     return{
@@ -29,7 +30,7 @@ export const GetScheduleByMoviesById = (idMovies) => {
         dispatch(GetScheduleByMoviesRequest())
         axios({
             method: "GET",
-            url: `http://localhost:3289/api/v1/schedule/movies/${idMovies}`,
+            url: `${urlApi}/schedule/movies/${idMovies}`,
         }).then((res) =>{
             dispatch(GetScheduleByMoviesSuccess(res.data))
         }).catch((err) =>{

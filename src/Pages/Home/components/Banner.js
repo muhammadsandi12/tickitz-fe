@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className='text-[#A0A3BD] text-2xl leading-7'>
                     <p>Nearest Cinema, Newest Movie,</p>
                 </div>
-                <div className='text-[#5F2EEA] text-6xl font-bold leading-9 mt-8'> 
+                <div className='text-[#5F2EEA] md:text-4xl lg:text-6xl  font-bold leading-9 mt-8'> 
                     <p>Find out now!</p>
                 </div>
                 

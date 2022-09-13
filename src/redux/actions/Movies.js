@@ -1,6 +1,7 @@
 import axios from 'axios'
 import moment from 'moment';
 import Swal from 'sweetalert2'
+const urlApi = process.env.REACT_APP_URL_API
 
 
 
@@ -33,8 +34,7 @@ export const GetMovies = ( {month},{search,page} ) => {
         dispatch(GetMoviesRequest())
         axios({
             method: "GET",
-            // url: `http://localhost:3289/api/v1/movies?limit=8${search? `&search=${search}`:''} ${page? `&page=${page}`:''} ${month? `&month=${month}`:''}`  
-            url: `http://localhost:3289/api/v1/movies?limit=8 ${month? `&month=${month}`:''} ${search? `&search=${search}`:''} ${page? `&page=${page}`:''} ` 
+            url: `${urlApi}/movies?limit=8 ${month? `&month=${month}`:''} ${search? `&search=${search}`:''} ${page? `&page=${page}`:''} ` 
         }).then((res) =>{
             dispatch(GetMoviesSuccess(res.data.data))
         }).catch((err) =>{
@@ -73,7 +73,7 @@ export const PostMovies = (formData,auth) => {
 
             axios({
                 method: "POST",
-                url: "http://localhost:3289/api/v1/movies",
+                url: `${urlApi}/api/v1/movies`,
                 data: formData,
                 headers: {
                     authorization:auth
@@ -180,7 +180,7 @@ export const DeleteMovies = (id, token) => {
         console.log(id, 'ini id nya')
         axios({
             method: "DELETE",
-            url: `http://localhost:3289/api/v1/movies/${id}`,
+            url: `${urlApi}/movies/${id}`,
             headers: {
                 authorization:token
               }
@@ -238,7 +238,7 @@ export const GetMoviesById = (data) => {
         dispatch(GetMoviesByIdRequest())
         axios({
             method: "GET",
-            url: `http://localhost:3289/api/v1/movies/${data}`
+            url: `${urlApi}/movies/${data}`
         }).then((res) =>{
             dispatch(GetMoviesByIdSuccess(res.data))
         }).catch((err) =>{
@@ -278,7 +278,7 @@ export const GetUpcoming = ({upcoming, limit }) => {
         dispatch(GetUpcomingRequest())
         axios({
             method: "GET",
-            url: `http://localhost:3289/api/v1/movies${upcoming ? `?upcoming=${upcoming}`:''} ${limit ? `&limit=${limit}`:''}  `,
+            url: `${urlApi}/movies${upcoming ? `?upcoming=${upcoming}`:''} ${limit ? `&limit=${limit}`:''}  `,
         }).then((res) =>{
             dispatch(GetUpcomingSuccess(res.data))
         }).catch((err) =>{
@@ -319,7 +319,7 @@ export const GetNowShowing = ({month, limit }) => {
         dispatch(GetNowShowingRequest())
         axios({
             method: "GET",
-            url: `http://localhost:3289/api/v1/movies${month ? `?month=${month}`:''} ${limit ? `&limit=${limit}`:''}  `,
+            url: `${urlApi}/movies${month ? `?month=${month}`:''} ${limit ? `&limit=${limit}`:''}  `,
         }).then((res) =>{
             dispatch(GetNowShowingSuccess(res.data))
         }).catch((err) =>{

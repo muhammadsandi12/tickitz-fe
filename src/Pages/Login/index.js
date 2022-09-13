@@ -1,13 +1,12 @@
-import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom"
-import { AuthLogin, AuthLogOut } from "../../redux/actions/Auth"
+import { AuthLogin } from "../../redux/actions/Auth"
 import './login.css'
 
 const Login = () => {
-    const { isLogin, loading, data, error } = useSelector((state) => state.login)
+    const { isLogin} = useSelector((state) => state.login)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [formAddData, setFormAddData] = useState({

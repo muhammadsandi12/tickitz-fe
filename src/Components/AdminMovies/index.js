@@ -1,10 +1,7 @@
-import moment from "moment"
-import { Link, useSearchParams } from "react-router-dom"
-import { months } from "moment"
+import {  useSearchParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { DeleteMovies, GetMovies } from "../../redux/actions/Movies"
 import { useEffect, useState } from "react"
-import { GetMoviesById } from "../../redux/actions/Movies"
 
 
 const AdminMovies = () => {
@@ -12,17 +9,12 @@ const AdminMovies = () => {
     const [paginate, setPaginate] = useState({ page: query.get('page') ?? 1 })
     const dispatch = useDispatch()
     const movies = useSelector((state) => state.getMovies)
-    let { data, error, loading, isLogin } = useSelector((state) => state.login);
+    let { data } = useSelector((state) => state.login);
     const deleted = useSelector((state) => state.deleteMovies)
     const [month, setMonth] = useState({})
     const isAddMovies = useSelector((state) => state.addMovies)
     
-
-
-    console.log(deleted, 'ini hasil delted')
-
     useEffect(() => {
-        
         dispatch(GetMovies(month, paginate))
     }, [paginate, month,deleted.isDeleteMovies,isAddMovies])
     const handlePaginate = (page) => {
@@ -31,8 +23,6 @@ const AdminMovies = () => {
         setQuery(query)
     }
     const update = (id) =>{
-        console.log(id)
-    //    dispatch(GetMovies(id))
     }
     const handleDelete = (id) => {
         dispatch(DeleteMovies(id,data.token))

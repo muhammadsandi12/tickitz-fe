@@ -1,5 +1,6 @@
 import axios from "axios";
 import Swal from 'sweetalert2'
+const urlApi = process.env.REACT_APP_URL_API
 
 const GetUsersByIdRequest = () => {
     return {
@@ -35,7 +36,7 @@ export const GetUsersById = (token) => {
         dispatch(GetUsersByIdRequest())
         axios({
             method: "GET",
-            url: `http://localhost:3289/api/v1/users/id `,
+            url: `${urlApi}/users/id `,
             headers: {
                 Authorization: token
             }
@@ -78,7 +79,7 @@ export const UpdateUser = (formUpdate,token) => {
         dispatch(UpdateUserRequest())
         axios({
             method: "PATCH",
-            url: `http://localhost:3289/api/v1/users `,
+            url: `${urlApi}/users `,
             data:formUpdate,
             headers: {
                 Authorization: token

@@ -8,12 +8,13 @@ import "./profileDetails.css"
 const DetailsProfile = () => {
     const dispatch = useDispatch()
     const users = useSelector((state) => state.getUsersById)
-    let { data, error, loading, isLogin } = useSelector((state) => state.login);
+    let { data} = useSelector((state) => state.login);
     const update = useSelector((state) => state.updateUser);
     const [selectedImage, setSelectedImage] = useState();
     const [repatch, setRepatch] = useState(false)
     const [formUpdate, setFormUpdate] = useState({})
     const token = data.token
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     
     const formData = new FormData()
     formData.append('firstname', formUpdate.firstname ?? users.data.firstname )
@@ -46,7 +47,7 @@ const DetailsProfile = () => {
                                 INFO
                             </div>
                             <div className="image-profile-details">
-                                <img src={selectedImage ? URL.createObjectURL(selectedImage) : `http://localhost:3289/uploads/${users.data.profile_image}`} />
+                                <img src={selectedImage ? URL.createObjectURL(selectedImage) : `${urlImage}${users.data.profile_image}`} alt="image profile" />
                             </div>
                             <div className="mt-5">
                                 <input type="file" onChange={(e) => setFormUpdate((prevData) => ({

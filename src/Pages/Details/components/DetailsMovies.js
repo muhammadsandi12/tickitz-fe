@@ -21,7 +21,7 @@ const DetailsMovies = () => {
                 <section className="container mx-auto flex ">
                     <div className="w-4/12 mr-10">
                         <div className="p-8 border-[0.5px] border-[#DEDEDE] rounded-lg">
-                            <img className="w-[236px] h-[362px]" src={`${urlImage}${item.cover}`} />
+                            <img className="w-[236px] h-[362px]" src={`${urlImage}${item.cover}`} alt="image"/>
                         </div>
                     </div>
                     <div className="w-8/12">

@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
   return (
     <>
       <footer className="container mx-auto">
         <div className="items-center flex mb-4 ">
           <div className="w-5/12">
-            <img src="tickitz1.png" width={170} height={43} />
+            <img src="/tickitz1.png" width={170} height={43} alt="logo tickitz" />
           </div>
           <div className="w-7/12 flex items-center text-base font-bold leading-9 ">
             <div className="w-4/12">
@@ -48,17 +49,17 @@ const Footer = () => {
             <div className="w-4/12">
               <div className=" mb-4">
                 <Link to="#">
-                  <img src="logo-ebu.png" />
+                  <img src="/logo-ebu.png" alt="logo ebu" />
                 </Link>
               </div>
               <div className=" mb-4">
                 <Link to="#">
-                  <img src="cinema-logo.png" />
+                  <img src="/cinema-logo.png" alt="cinema logo" />
                 </Link>
               </div>
               <div className="mb-4">
                 <Link to="#">
-                  <img src="hiflix-logo.png" />
+                  <img src="/hiflix-logo.png"alt="hiflix logo"/>
                 </Link>
               </div>
 
@@ -67,22 +68,22 @@ const Footer = () => {
               <div className=" flex-col items-center mr-4">
                 <div className="mb-4">
                   <Link to="#">
-                    <img src="facebook-icon.png" />
+                    <img src="/facebook-icon.png" alt="facebook icon" />
                   </Link>
                 </div>
                 <div className=" mb-4">
                   <Link to="#">
-                    <img src="instagram-icon.png" />
+                    <img src="/instagram-icon.png" alt="instagram icon" />
                   </Link>
                 </div>
                 <div  className="facebook mb-4">
                   <Link to="#">
-                    <img className="" src="twitter-icon.png" />
+                    <img className="" src="/twitter-icon.png" alt="twitter icon"/>
                   </Link>
                 </div>
                 <div className="facebook mb-4">
                   <Link to="#">
-                    <img src="youtube-icon.png" />
+                    <img src="/youtube-icon.png" alt="youtube icon" />
                   </Link>
                 </div>
               </div>

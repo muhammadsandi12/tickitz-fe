@@ -50,14 +50,13 @@ const ScheduleMovie = () => {
                             <div className='premiere-details'>
                                 <div className='logo-premiere' >
                                     <div className='wrap-image'>
-                                        <img src={`${urlImage}${item.logo_premiere}`} />
+                                        <img src={`${urlImage}${item.logo_premiere}`} alt="image logo"/>
                                     </div>
                                 </div>
                                 <div className='details-premiere'>
                                     <div className='name-premiere'>{item.name_premiere}</div>
                                     <div className='address-premiere'>{item.address}</div>
                                     <div className='address-premiere'>{item.location_name}</div>
-
                                 </div>
                             </div>
                             <div className='section-time'>

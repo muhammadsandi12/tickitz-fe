@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: inter;
+  src: 
+  url(../public/font/Inter-VariableFont_slnt\,wght.ttf)
+  ;
+}
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.container{
+  padding: 2% 8%;
+}
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-primary{
+  background-color: #5F2EEA;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.bg-white{
+  background-color: white;
+}
+.bg-gray{
+  background-color: #F5F6F8;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,103 @@
+.section-details {
+    display: flex;
+    height: 100%;
+    padding: 0 4%;
+}
+
+.left-details {
+    flex: 1;
+}
+
+.right-details {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    padding-right:  8%;
+}
+
+.card-movie-details{
+    display: flex;
+    margin: 0 80px;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 32px;
+    border-radius: 8px;
+    border: 2px solid #DEDEDE;
+    margin-bottom: 24px;
+}
+.card-movie-details img{
+    Width :236.72px;
+    Height :362.83px;
+}
+.title-movie-details {
+    font-family: 'Mulish', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 1px;
+    color: #14142B;
+}
+
+.genre-movie {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 0.75px;
+    color: #4E4B66;
+}
+
+.details-release {
+    display: flex;
+    margin-top: 1rem;
+    border-bottom: 1px solid #DEDEDE;
+    padding-bottom: 1rem;
+}
+
+.title-desc {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px;
+    color: #8692A6;
+}
+
+.wrap-details-all {
+    margin-right: 2rem;
+}
+
+.details-data {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+}
+
+.details-desc {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    
+}
+
+.wrap-title{
+    margin-bottom: 12px;
+}
+
+.title-synopsis{
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 8px;
+}
+.wrap-synopsis{
+    margin-top: 24px;
+}
+

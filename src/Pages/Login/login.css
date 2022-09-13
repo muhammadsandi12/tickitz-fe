@@ -1,0 +1,92 @@
+.container-login{
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+}
+
+.section-left{
+    flex: 3;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.description{
+    font-size: 18px;
+    color: #c8bfbf;
+}
+
+.section-right{
+    height: 100vh;
+    flex: 2;
+    background-color: white;
+    display: flex;
+    
+}
+.wrapper-form{
+   margin: auto 5rem;
+   padding: auto;
+}
+.title-form{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.btn-signin{
+    margin-top: 20px;
+   
+}
+.form{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+.email{
+    line-height: 2;
+}
+.password{
+    line-height: 2;
+
+}
+
+ .title-input{
+    color: rgb(117, 117, 117);
+    font-weight: 500;
+    
+}
+
+.input-form{
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.btn-signin{
+    width: 100%;
+    background-color: #5F2EEA;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 1rem;
+}
+
+.forget-password{
+    margin-top: 1rem;
+    display: flex; 
+    justify-content: center;
+    color: #8692A6;
+
+}
+
+.dont-have-account{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    color: #8692A6;
+}
+
+

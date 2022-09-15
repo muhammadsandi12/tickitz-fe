@@ -12,8 +12,6 @@ const ScheduleMovie = () => {
     const { data } = useSelector((state) => state.getScheduleByMoviesById);
     const [time, setTime] = useState()
     const [location, setLocation] = useState()
-    console.log(location,'ini location')
-    console.log(data.data.results[0], 'adasd')
     useEffect(() => {
         dispatch(GetScheduleByMoviesById(id, location))
     }, [location,data])

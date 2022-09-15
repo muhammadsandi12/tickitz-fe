@@ -27,6 +27,7 @@ const LoginError = (error) => {
 export const AuthLogin = (formData) => {
     return (dispatch) => {
         dispatch(LoginRequest())
+        console.log(formData.email,'sfsf')
         axios({
             method: "POST",
             url: `${urlApi}auth/login`,
@@ -45,6 +46,7 @@ export const AuthLogin = (formData) => {
             }
         }).catch((err) => {
             dispatch(LoginError(err.response.data))
+            console.log(err, 'ini error woy')
             if (err.response.status) {
                 Swal.fire({
                     icon: 'error',
@@ -95,7 +97,7 @@ export const AuthRegister = (formData) => {
         dispatch(RegisterRequest())
         axios({
             method: "POST",
-            url: `${urlApi}/auth/register`,
+            url: `${urlApi}auth/register`,
             data: {
                 firstname: formData.firstname,
                 lastname: formData.lastname,
@@ -115,6 +117,8 @@ export const AuthRegister = (formData) => {
 
         }).catch((err) => {
             dispatch(RegisterError(err.response.data))
+            console.log(err, 'ini error woy')
+
             if (err.response.status) {
                 Swal.fire({
                     icon: 'error',

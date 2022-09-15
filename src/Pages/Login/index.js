@@ -26,8 +26,8 @@ const Login = () => {
         }
     }, [isLogin])
     return (
-        <section className="container-login">
-            <section className="section-left" style={{ backgroundImage: `linear-gradient(rgba(43, 21, 107, 0.5), rgba(43, 21, 107, 0.8)), url(./cover.png)` }} >
+        <section className="flex">
+            <section className="hidden md:block md:w-5/12 lg:w-7/12" style={{ backgroundImage: `linear-gradient(rgba(43, 21, 107, 0.5), rgba(43, 21, 107, 0.8)), url(./cover.png)` }} >
 
             </section>
             <section className="section-right">

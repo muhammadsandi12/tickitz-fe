@@ -30,10 +30,7 @@ export const GetSeat = ( id_schedule, id_time, token ) => {
         dispatch(GetSeatRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/seat${id_schedule? `?id_schedule=${id_schedule}`:''} ${id_time? `&id_time=${id_time}`:''}`,
-            Headers:{
-                Authorization: token
-            } 
+            url: `${urlApi}seat${id_schedule? `?id_schedule=${id_schedule}`:''} ${id_time? `&id_time=${id_time}`:''}`,
         }).then((res) =>{
             dispatch(GetSeatSuccess(res.data))
         }).catch((err) =>{

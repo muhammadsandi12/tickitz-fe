@@ -25,7 +25,7 @@ const Upcoming = () => {
     return (
         <div className="container mx-auto ">
                 <div className="flex  justify-between">
-                    <div className="text-3xl  font-bold border-b-2 pb-4 border-[#000] ">
+                    <div className="text-2xl  font-bold border-b-4 pb-4 border-[#000] ">
                         Upcoming                   
                          </div>
                     <div className=" text-[#5F2EEA] text-base font-bold">

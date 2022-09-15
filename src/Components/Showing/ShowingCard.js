@@ -26,7 +26,7 @@ const Showing = () => {
 
             <div className="container mx-auto ">
                 <div className="flex  justify-between">
-                    <div className="text-2xl text-[#5F2EEA] font-bold border-b-2 pb-4 border-[#5F2EEA] ">
+                    <div className="text-2xl text-[#5F2EEA] font-bold border-b-4 pb-4 border-[#5F2EEA] ">
                         Now Showing
                     </div>
                     <div className=" text-[#5F2EEA] text-base font-bold">

@@ -5,10 +5,14 @@ import { useDispatch, useSelector } from "react-redux"
 import { GetSeat } from "../../redux/actions/Seat"
 const Booking = () =>{
     const dispatch = useDispatch()
+    let { data, isLogin } = useSelector((state) => state.login);
     const booking = useSelector((state) => state.getBookNow)
-    console.log(booking, 'ini data booking')
+    const seat = useSelector((state) => state.getSeat)
+    const id_schedule = booking.data.item.id_schedule
+    const id_time =booking.data.time
+    console.log(seat.data.data)
     useEffect(() =>{
-        dispatch(GetSeat())
+        dispatch(GetSeat(id_schedule, id_time))
     },[])
     return(
         <>

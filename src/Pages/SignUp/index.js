@@ -32,7 +32,7 @@ const SignUp = ()=> {
   },[isRegister])
     
     return(
-      <section className="container-register">
+      <section className="flex">
             <div className="section-left" >
             <section className="banner-image" style={{backgroundImage: `linear-gradient(rgba(43, 21, 107, 0.5), rgba(43, 21, 107, 0.8)), url(./cover.png)`}} >
             </section>

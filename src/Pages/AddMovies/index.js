@@ -5,7 +5,7 @@ import { PostMovies, GetMovies } from '../../redux/actions/Movies'
 import { useDispatch, useSelector } from 'react-redux'
 import './addMovies.css'
 import AdminMovies from '../../Components/AdminMovies'
-
+import { AiOutlineFileImage } from "react-icons/ai"
 const AddMovies = () => {
     const login = useSelector((state) => state.login)
     const isAddMovies = useSelector((state) => state.addMovies)
@@ -44,11 +44,17 @@ const AddMovies = () => {
                         <div className='bg-white py-8 px-12 rounded-lg'>
                             <div className='flex'>
                                 {/* {image upload harus ada encType} */}
-                                <div className='w-4/12'>
-                                    <input className='input' type="file" placeholder="image" onChange={(e) => setFormAddData((prevData) => ({
-                                        ...prevData,
-                                        cover: e.target.files[0]
-                                    }))} /><br />
+                                <div className='w-4/12 flex-col justify-center items-center text-center'>
+                                    <div className='flex justify-center items-center mb-10'>
+                                        <AiOutlineFileImage size={200} />
+                                    </div>
+                                    <div>
+                                        <input className='input' type="file" placeholder="image" onChange={(e) => setFormAddData((prevData) => ({
+                                            ...prevData,
+                                            cover: e.target.files[0]
+                                        }))} /><br />
+
+                                    </div>
                                 </div>
                                 <div className='w-4/12'>
                                     <div className='flex flex-col justify-center px-2'>
@@ -96,16 +102,16 @@ const AddMovies = () => {
                                         </div>
                                         <div className='flex justify-between '>
                                             <div className=''>
-                                            <input className='border-[0.5px] py-2 px-2 rounded-md w-8/12 border-[#DEDEDE] outline-none' type="text" placeholder="Hour" onChange={(e) => setFormAddData((prevData) => ({
-                                                ...prevData,
-                                                hour: e.target.value 
-                                            }))} />
+                                                <input className='border-[0.5px] py-2 px-2 rounded-md w-8/12 border-[#DEDEDE] outline-none' type="text" placeholder="Hour" onChange={(e) => setFormAddData((prevData) => ({
+                                                    ...prevData,
+                                                    hour: e.target.value
+                                                }))} />
                                             </div>
                                             <div className=''>
-                                            <input className='border-[0.5px] py-2 px-2 rounded-md w-8/12  border-[#DEDEDE] outline-none' type="text" placeholder="Minute" onChange={(e) => setFormAddData((prevData) => ({
-                                                ...prevData,
-                                                minute: e.target.value 
-                                            }))} /><br />
+                                                <input className='border-[0.5px] py-2 px-2 rounded-md w-8/12  border-[#DEDEDE] outline-none' type="text" placeholder="Minute" onChange={(e) => setFormAddData((prevData) => ({
+                                                    ...prevData,
+                                                    minute: e.target.value
+                                                }))} /><br />
 
                                             </div>
                                         </div>

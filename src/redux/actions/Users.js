@@ -36,7 +36,7 @@ export const GetUsersById = (token) => {
         dispatch(GetUsersByIdRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/users/id `,
+            url: `${urlApi}users/id `,
             headers: {
                 Authorization: token
             }
@@ -79,7 +79,7 @@ export const UpdateUser = (formUpdate,token) => {
         dispatch(UpdateUserRequest())
         axios({
             method: "PATCH",
-            url: `${urlApi}/users `,
+            url: `${urlApi}users `,
             data:formUpdate,
             headers: {
                 Authorization: token

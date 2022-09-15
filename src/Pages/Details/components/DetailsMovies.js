@@ -18,20 +18,20 @@ const DetailsMovies = () => {
         <>
        
             {details?.data?.data?.results.map((item) => (
-                <section className="container mx-auto flex ">
-                    <div className="w-4/12 mr-10">
-                        <div className="p-8 border-[0.5px] border-[#DEDEDE] rounded-lg">
+                <section className="container mx-auto flex flex-col lg:flex-row  ">
+                    <div className=" w-full flex justify-center mb-10  lg:w-4/12 lg:mr-10">
+                        <div className=" p-8 border-[0.5px] border-[#DEDEDE] rounded-lg">
                             <img className="w-[236px] h-[362px]" src={`${urlImage}${item.cover}`} alt="image"/>
                         </div>
                     </div>
-                    <div className="w-8/12">
+                    <div className="w-full lg:w-8/12">
                         <div className="flex flex-col ">
-                            <div className="flex-col">
-                                <div className="text-4xl font-bold text-[#14142B] tracking-wide leading-8">{item.title}</div>
+                            <div className="flex-col text-center lg:text-left">
+                                <div className="text-4xl font-bold  text-[#14142B] tracking-wide leading-8">{item.title}</div>
                                 <div className="text-lg text-[#4E4B66] font-normal mt-2">{item.categories}</div>
                             </div>
                             <div className="flex mt-4 mb-2 border-b-[1px] border-[#DEDEDE]">
-                                <div className="flex-col mr-8" >
+                                <div className="flex-col mr-8 w-4/12 " >
                                     <div className="mb-2" >
                                         <div className="text-[#8692A6] font-normal text-sm mb-2">
                                             release date
@@ -50,7 +50,7 @@ const DetailsMovies = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="mb-2">
+                                    <div className="mb-2 w-8/12">
                                         <div className="text-[#8692A6] font-normal text-sm mb-2">
                                             Directed by
                                         </div>

@@ -33,7 +33,7 @@ export const GetMovies = ( {month},{search,page} ) => {
         dispatch(GetMoviesRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/movies?limit=8 ${month? `&month=${month}`:''} ${search? `&search=${search}`:''} ${page? `&page=${page}`:''} ` 
+            url: `${urlApi}movies?limit=8 ${month? `&month=${month}`:''} ${search? `&search=${search}`:''} ${page? `&page=${page}`:''} ` 
         }).then((res) =>{
             dispatch(GetMoviesSuccess(res.data.data))
         }).catch((err) =>{
@@ -72,7 +72,7 @@ export const PostMovies = (formData,auth) => {
 
             axios({
                 method: "POST",
-                url: `${urlApi}/api/v1/movies`,
+                url: `${urlApi}movies`,
                 data: formData,
                 headers: {
                     authorization:auth
@@ -179,7 +179,7 @@ export const DeleteMovies = (id, token) => {
         console.log(id, 'ini id nya')
         axios({
             method: "DELETE",
-            url: `${urlApi}/movies/${id}`,
+            url: `${urlApi}movies/${id}`,
             headers: {
                 authorization:token
               }
@@ -237,7 +237,7 @@ export const GetMoviesById = (data) => {
         dispatch(GetMoviesByIdRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/movies/${data}`
+            url: `${urlApi}movies/${data}`
         }).then((res) =>{
             dispatch(GetMoviesByIdSuccess(res.data))
         }).catch((err) =>{
@@ -277,7 +277,7 @@ export const GetUpcoming = ({upcoming, limit }) => {
         dispatch(GetUpcomingRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/movies${upcoming ? `?upcoming=${upcoming}`:''} ${limit ? `&limit=${limit}`:''}  `,
+            url: `${urlApi}movies${upcoming ? `?upcoming=${upcoming}`:''} ${limit ? `&limit=${limit}`:''}  `,
         }).then((res) =>{
             dispatch(GetUpcomingSuccess(res.data))
         }).catch((err) =>{
@@ -318,7 +318,7 @@ export const GetNowShowing = ({month, limit }) => {
         dispatch(GetNowShowingRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/movies${month ? `?month=${month}`:''} ${limit ? `&limit=${limit}`:''}  `,
+            url: `${urlApi}movies${month ? `?month=${month}`:''} ${limit ? `&limit=${limit}`:''}  `,
         }).then((res) =>{
             dispatch(GetNowShowingSuccess(res.data))
         }).catch((err) =>{

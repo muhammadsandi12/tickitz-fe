@@ -25,15 +25,16 @@ const GetScheduleByMoviesError = (error) =>{
 
 
 
-export const GetScheduleByMoviesById = (idMovies) => {
+export const GetScheduleByMoviesById = (id,location) => {
     return (dispatch) =>{
         dispatch(GetScheduleByMoviesRequest())
         axios({
             method: "GET",
-            url: `${urlApi}/schedule/movies/${idMovies}`,
+            url: `${urlApi}schedule/movies/${id}${location ? `?location=${location}`:''}`,
         }).then((res) =>{
             dispatch(GetScheduleByMoviesSuccess(res.data))
         }).catch((err) =>{
+            console.log(err, 'error get shcedule by movies')
             dispatch( GetScheduleByMoviesError(err.response.data))
         })
     }

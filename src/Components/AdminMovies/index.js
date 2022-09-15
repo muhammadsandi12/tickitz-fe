@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 
 const AdminMovies = () => {
     const [query, setQuery] = useSearchParams()
+    const urlImage = process.env.REACT_APP_URL_IMAGE
     const [paginate, setPaginate] = useState({ page: query.get('page') ?? 1 })
     const dispatch = useDispatch()
     const movies = useSelector((state) => state.getMovies)
@@ -51,7 +52,7 @@ const AdminMovies = () => {
                         <>
                             <div className="flex flex-col mx-4 my-2 border-[0.5px] border-[#DEDEDE] rounded-r-lg px-6 py-4 justify-between ">
                                 <div className=" ">
-                                    <img className="w-[159px] h-[244px] rounded-lg" src={`http://localhost:3289/uploads/${item.cover}`} alt={item.title} />
+                                    <img className="w-[159px] h-[244px] rounded-lg" src={`${urlImage}${item.cover}`} alt={item.title} />
                                 </div>
                                 <div className="text-center mt-4" >
                                     <div className="text-lg font-bold text-[#14142B]">

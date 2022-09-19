@@ -13,6 +13,7 @@ import UpdateUser from "./UpdateUser";
 import DeleteMovies from "./DeleteMovies";
 import Getseat from "./GetSeat"
 import GetBookNow from "./GetBookNow"
+import GetTime from "./GetTime"
 
 const rootReducers = combineReducers({
     login: Login,
@@ -28,7 +29,8 @@ const rootReducers = combineReducers({
     updateUser: UpdateUser,
     deleteMovies: DeleteMovies,
     getSeat: Getseat,
-    getBookNow: GetBookNow
+    getBookNow: GetBookNow,
+    getTime: GetTime
 })
 
 export default rootReducers
